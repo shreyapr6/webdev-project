@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	
@@ -7,17 +7,22 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Temporary Kennels</title>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca|Muli&display=swap&subset=vietnamese">
-	<link rel="stylesheet" type="text/css" href="../layout/randomname.css">
-	<link rel="stylesheet" type="text/css" href="../layout/side_bar_style.css">
-	<link rel="stylesheet" type="text/css" href="temporarykennel.css">
 
-
-
-	<script src="https://kit.fontawesome.com/57217439de.js" crossorigin="anonymous"></script>
-
-	<script src="../layout/menu.js"></script>
 	
+	<?php
+
+	echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend+Deca|Muli&display=swap&subset=vietnamese"/>';
+	echo '<link rel="stylesheet" type="text/css" href="../layout/randomname.css"/>';
+	echo '<link rel="stylesheet" type="text/css" href="../layout/side_bar_style.css"/>';
+	echo '<link rel="stylesheet" type="text/css" href="temporarykennel.css"/>'; 
+
+	echo '<script src="https://kit.fontawesome.com/57217439de.js" crossorigin="anonymous"></script>';
+	echo '<script type="text/javascript" src="../layout/menu.js"></script>';
+
+	echo '<script type="text/javascript" src="temporarykennel.js"></script>';
+
+	?>
+
 	
 </head>
 
@@ -100,7 +105,7 @@
 
 		
 
-		<form id="temp-kennel-form">
+		<form action="inserttemp.php" method="post" id="temp-kennel-form">
 
 			<div class="form-fields">
 				<label id="your-name">Your Name<span>*</span></label>
@@ -115,19 +120,19 @@
 
 			<div class="form-fields">
 				<label id ="checkin-date">Check-in Date<span>*</span></label>
-				<input type="date" name="checkinDate" class="input-style" required >
+				<input type="date" name="inDate" class="input-style" required >
 			</div>
 
 			<div class="form-fields">
 				<label id ="checkout-date">Check-out Date<span>*</span></label>
-				<input type="date" name="checkoutDate" class="input-style" required >
+				<input type="date" name="outDate" class="input-style" required >
 			</div>
 		
 
 			<div class="form-fields">
 		
 				<label id="organization">Select Temporary Kennel<span>*</span></label>
-				<select class="input-style">
+				<select class="input-style" name = "kennelName">
 					<option>Dog's Shine, Bangalore</option>
 					<option>Woof!, Bangalore</option>
 					<option>MyBone, Mumbai</option>
@@ -142,7 +147,7 @@
 		</form>
 		
 
-	</div> <!--container--> 
+	</div> 
 	
 	<script type="text/javascript" src="temporarykennel.js"></script>
 
