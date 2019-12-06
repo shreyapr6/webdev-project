@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../layout/side_bar_style.css">
 	<link rel="stylesheet" type="text/css" href="adopt_style.php">
 
-	<script type="text/javascript" src = "adopt.js"></script>
+
 	<script src="../layout/menu.js"></script>
 
 	<script src="https://kit.fontawesome.com/57217439de.js" crossorigin="anonymous"></script>
@@ -65,7 +65,7 @@
 
             <li><a href="../findahome/form.php" ><i class="fas fa-home"  ></i> Find a Home</a></li>
             
-            <li><a href="../temporarykennel/temporarykennel.html" ><i class="fas fa-home"></i> Temporary Kennels</a></li>
+            <li><a href="../temporarykennel/temporarykennel.php" ><i class="fas fa-home"></i> Temporary Kennels</a></li>
             
             <li><a href="../rescue/rescue.html" ><i class="fas fa-first-aid"  ></i> Rescue</a></li>
             
@@ -125,7 +125,7 @@
 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "");
+$link = mysqli_connect("localhost", "root", "password");
  
 // Check connection
 if($link === false){
@@ -133,7 +133,7 @@ if($link === false){
 }
  
 // Attempt select query execution
-$sql = "SELECT * FROM `findahome`.`formdata`";
+$sql = "SELECT * FROM `database`.`formdata`";
 
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
@@ -158,7 +158,7 @@ if($result = mysqli_query($link, $sql)){
 						echo '</div>';	
 
 				echo '<button class ="button">Request Adopt</button>';
-
+			echo '	<script type="text/javascript" src = "adopt.js"></script>';
 			echo '<span id="successful-submit">';
 			echo '<p> Your adopt request has been sent successfully !</p>';
 			echo '<img src="../images/verified1.png">';

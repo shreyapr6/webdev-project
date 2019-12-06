@@ -81,7 +81,7 @@
 		    
             <li><a href="../findahome/form.php" ><i class="fas fa-home"  ></i> Find a Home</a></li>
             
-            <li><a href="../temporarykennel/temporarykennel.html" ><i class="fas fa-home"></i> Temporary Kennels</a></li>
+            <li><a href="../temporarykennel/temporarykennel.php" ><i class="fas fa-home"></i> Temporary Kennels</a></li>
             
             <li><a href="../adopt/adopt.php" ><i class="fas fa-paw"  ></i> Adopt</a></li>
             
@@ -106,11 +106,11 @@
 
 <?php   
  //load_data_select.php 
- $connect = mysqli_connect("localhost", "root", "");  
+ $connect = mysqli_connect("localhost", "root", "password");  
  function fill_city($connect)  
  {  
       $output = '';  
-      $sql = "SELECT * FROM `cities`.`city`";  
+      $sql = "SELECT * FROM `database`.`city`";  
       $result = mysqli_query($connect, $sql) ;  
       while($row = mysqli_fetch_array($result))  
       {  
@@ -121,7 +121,7 @@
  function fill_vet($connect)  
  {  
       $output = '';  
-      $sql = "SELECT * FROM `vets`.`vet_data`";  
+      $sql = "SELECT * FROM `database`.`vet_data`";  
       $result = mysqli_query($connect, $sql);  
        
       while($row = mysqli_fetch_array($result))  

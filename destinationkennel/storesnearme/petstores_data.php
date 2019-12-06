@@ -4,7 +4,7 @@
 
 <?php  
  //load_data.php  
- $connect = mysqli_connect("localhost", "root", "");  
+ $connect = mysqli_connect("localhost", "root", "password");  
  
  $output = '';  
  if(isset($_POST["city_id"]))  
@@ -62,7 +62,7 @@ function initMap(){
 				  var center_long = cards[i].querySelector('.centre-longitude').textContent;
 				
 				  var options = {
-					   zoom : 12, 
+					   zoom : 10, 
 					   center:{lat: parseFloat(center_lat) , lng: parseFloat(center_long)}
 				  }    
 				  var longitude = cards[i].querySelector('.shop-longitude').textContent;

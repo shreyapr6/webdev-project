@@ -3,7 +3,7 @@
 
 <?php  
  //load_data.php  
- $connect = mysqli_connect("localhost", "root", "");  
+ $connect = mysqli_connect("localhost", "root", "password");  
  
  $output = '';  
  if(isset($_POST["city_id"]))  
@@ -43,33 +43,6 @@
       echo $output;  
  }  
  ?>  
- <script>
-
-		function initMap(){
-			var options = {
-                zoom : 12, 
-                center:{lat: 12.9716 , lng:77.5946 }
-            }    
-			var cards = document.querySelectorAll('.card');
-
-
-			for(i=0;i<cards.length;i++)
-			{
-				var longitude = cards[i].querySelector('.shop-longitude').textContent;
-				var latitude = cards[i].querySelector('.shop-lattitude').textContent;
-				var coords = {lat : parseFloat(latitude) , lng : parseFloat(longitude)};
-				var maparea = cards[i].querySelector('.my-shop-map');
-				var map = new google.maps.Map(maparea,options);
-				var marker = new google.maps.Marker({position: coords,animation:google.maps.Animation.BOUNCE ,map: map });
-			}	
-		}
-
-	
-	</script>
-	
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA9p52wyN1peD4pir5roFPNgyG1F-dG9c&callback=initMap">
-    </script>
-
+ 
 </body>	
 </html>

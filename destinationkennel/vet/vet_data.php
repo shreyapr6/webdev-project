@@ -3,18 +3,18 @@
 
 <?php  
  //load_data.php  
- $connect = mysqli_connect("localhost", "root", "");  
+ $connect = mysqli_connect("localhost", "root", "password");  
  
  $output = '';  
  if(isset($_POST["city_id"]))  
  {  
       if($_POST["city_id"] != '')  
       {  
-           $sql = "SELECT * FROM `vets`.`vet_data` WHERE city_id = '".$_POST["city_id"]."'";  
+           $sql = "SELECT * FROM `database`.`vet_data` WHERE city_id = '".$_POST["city_id"]."'";  
       }  
       else  
       {  
-           $sql = "SELECT * FROM `vets`.`vet_data`";  
+           $sql = "SELECT * FROM `database`.`vet_data`";  
       }  
       $result = mysqli_query($connect, $sql);  
 

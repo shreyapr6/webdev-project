@@ -96,7 +96,7 @@
 <?php   
  //load_data_select.php 
 
- $connect = mysqli_connect("localhost", "root", "");  
+ $connect = mysqli_connect("localhost", "root", "password");  
  function fill_city($connect)  
  {  
       $output = '';  

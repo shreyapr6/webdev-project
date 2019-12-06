@@ -67,7 +67,7 @@
             
             <li><a href="../findahome/form.php" ><i class="fas fa-home"  ></i> Find a Home</a></li>
             
-            <li><a href="../temporarykennel/temporarykennel.html" ><i class="fas fa-home"></i> Temporary Kennels</a></li>
+            <li><a href="../temporarykennel/temporarykennel.php" ><i class="fas fa-home"></i> Temporary Kennels</a></li>
             
             <li><a href="../adopt/adopt.php" ><i class="fas fa-paw"  ></i> Adopt</a></li>
             

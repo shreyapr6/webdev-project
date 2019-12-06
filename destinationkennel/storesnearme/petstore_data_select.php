@@ -17,7 +17,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -79,7 +79,7 @@
 		<ul>
             <li><a href="../findahome/form.php" ><i class="fas fa-home"  ></i> Find a Home</a></li>
             
-            <li><a href="../temporarykennel/temporarykennel.html" ><i class="fas fa-home"  ></i> Temporary Kennels</a></li>
+            <li><a href="../temporarykennel/temporarykennel.php" ><i class="fas fa-home"  ></i> Temporary Kennels</a></li>
             
             <li><a href="../adopt/adopt.php" ><i class="fas fa-paw"  ></i> Adopt</a></li>
             
@@ -109,7 +109,7 @@
 <?php   
  //load_data_select.php 
 
- $connect = mysqli_connect("localhost", "root", "");  
+ $connect = mysqli_connect("localhost", "root", "password");  
  function fill_city($connect)  
  {  
       $output = '';  
@@ -205,30 +205,30 @@
 
  	<script>
 
-               function initMap(){
-			 
-                var cards = document.querySelectorAll('.card');
- 
-                
-                for(i=0;i<cards.length;i++)
-                {
-                     var center_lat = cards[i].querySelector('.centre-lattitude').textContent;
-                     var center_long = cards[i].querySelector('.centre-longitude').textContent;
-                   
-                     var options = {
-                          zoom : 12, 
-                          center:{lat: parseFloat(center_lat) , lng: parseFloat(center_long)}
-                     }    
-                     var longitude = cards[i].querySelector('.shop-longitude').textContent;
-                     var latitude = cards[i].querySelector('.shop-lattitude').textContent;
-                     
-                     var coords = {lat : parseFloat(latitude) , lng : parseFloat(longitude)};
-                     
-                     var maparea = cards[i].querySelector('.my-shop-map');
-                     var map = new google.maps.Map(maparea,options);
-                     var marker = new google.maps.Marker({position: coords , map : map });
-                }	
-           }
+		function initMap(){
+			
+			var cards = document.querySelectorAll('.card');
+               
+
+
+			for(i=0;i<cards.length;i++)
+			{
+                    var center_lat = cards[i].querySelector('.centre-lattitude').textContent;
+                    var center_long = cards[i].querySelector('.centre-longitude').textContent;
+                    var options = {
+                         zoom : 10, 
+                         center:{lat: parseFloat(center_lat) , lng: parseFloat(center_long)}
+                    }    
+
+				var longitude = cards[i].querySelector('.shop-longitude').textContent;
+				var latitude = cards[i].querySelector('.shop-lattitude').textContent;
+				var coords = {lat : parseFloat(latitude) , lng : parseFloat(longitude)};
+				var maparea = cards[i].querySelector('.my-shop-map');
+				var map = new google.maps.Map(maparea,options);
+				var marker = new google.maps.Marker({position: coords, map: map });
+			}	
+		}
+
 	
 	</script>
 	
